@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Frontend Project</title>
+    
+    <style type="text/css">
+        #map {
+            height: 500px;
+            width: 1000px;
+        }
+        .listings {
+            display: inline-flex;
+            
+        }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/main.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>City-Break Finder</h1>
+        <div >
+            <h2>Choose Your Destination</h2>
+            <input type="text" name="autocomplete" id="autocomplete" placeholder="Enter a City"/>
+            <button type="reset" name="reset" id="reset" onclick="resetMap()">Clear</button>
+        </div>
+        
+        <div id="map"></div>
+        
+        <div class="listings">
+            <div>
+                <table>
+                    <thead id="title"></thead>
+                    <tbody id="results"></tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead id="bars"></thead>
+                    <tbody id="barResults"></tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead id="attractions"></thead>
+                    <tbody id="attResults"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div style="display: none">
+          <div id="info-content">
+            <table>
+              <tr id="iw-url-row" class="iw_table_row">
+                <td id="iw-icon" class="iw_table_icon"></td>
+                <td id="iw-url"></td>
+              </tr>
+              <tr id="iw-address-row" class="iw_table_row">
+                <td class="iw_attribute_name">Address:</td>
+                <td id="iw-address"></td>
+              </tr>
+              <tr id="iw-phone-row" class="iw_table_row">
+                <td class="iw_attribute_name">Telephone:</td>
+                <td id="iw-phone"></td>
+              </tr>
+              <tr id="iw-rating-row" class="iw_table_row">
+                <td class="iw_attribute_name">Rating:</td>
+                <td id="iw-rating"></td>
+              </tr>
+              <tr id="iw-website-row" class="iw_table_row">
+                <td class="iw_attribute_name">Website:</td>
+                <td id="iw-website"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <div id="suggest">
+            <h2>Need Some Inspiration?</h2>
+            <div id="loc1">London
+                <img src="#"></img>
+            </div>
+            <div id="loc2">Dublin
+                <img src="#"></img>
+            </div>
+            <div id="loc3">Berlin
+                <img src="#"></img>
+            </div>
+            <div id="loc4">Barcelona
+                <img src="#"></img>
+            </div>
+        </div>
+    </div>
+    
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCooVz6oCjN5u_3cMHByQ_zhFMIEgDS05A&callback=initMap&libraries=places"></script>
+    
+</body>
+</html>
