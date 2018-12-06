@@ -27,7 +27,8 @@
             
             autocomplete.addListener('place_changed', onPlaceChanged);
         }
-        $("document").ready(function() {    
+        
+        $("document").ready(function() { 
             $("#loc1").click(function() {
                 $("#autocomplete").val('London, UK');
                 this.LatLng = new google.maps.LatLng({lat: 51.507351, lng: -0.127758});
@@ -93,6 +94,7 @@
               if (status === google.maps.places.PlacesServiceStatus.OK) {
                 clearResults();
                 clearMarkers();
+                $("#listingsTitle").show();
                 addHeading();
                 for (var i = 0; i < results.length; i++) {
                   var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -134,11 +136,11 @@
         }
         
         function addHeading() {
-            var title = document.getElementById('title');
+            var hotel = document.getElementById('hotels');
             var th = document.createElement('th');
-            var text = document.createTextNode('Accomodation');
+            var text = document.createTextNode("Accommodation");
             th.appendChild(text);
-            title.appendChild(th);
+            hotel.appendChild(th);
         }
         
         function addResult(result, i) {
@@ -387,6 +389,7 @@
             clearAttResults();
             clearAttMarkers();
             $("#suggest").show();
+            $("#listingsTitle").hide();
             $("thead").empty();
             $("#autocomplete").val('');
             initMap();

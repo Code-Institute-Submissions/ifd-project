@@ -1,0 +1,53 @@
+.container {
+    height: auto;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+.select {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.map-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#map {
+    height: 400px;
+    width: 900px;
+}
+        
+.resultsTables {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#listingsTitle {
+    display: none;
+    text-align: center;
+}
+
+.presets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
