@@ -13,92 +13,95 @@
     
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>City-Break Finder</h1>
-        </header>
-        <section>
-            <div class="select">
-                <h2>Choose Your Destination</h2>
-                <input type="text" name="autocomplete" id="autocomplete" placeholder="Enter a City"/>
-                <button type="reset" name="reset" id="reset" onclick="resetMap()">Clear</button>
-            </div>
-        </section>
-        <main>
-            <div class="map-container">
-                <div id="map"></div>
-            </div>
-            
-            <div class="listings">
-                <h2 id="listingsTitle">Here's the results for your city.<br>
-                    Click on a result to display more information
-                </h2>
-                <div class="resultsTables">
-                    <table>
-                        <thead id="hotels"></thead>
-                        <tbody id="results"></tbody>
-                    </table>
-                    <table>
-                        <thead id="bars"></thead>
-                        <tbody id="barResults"></tbody>
-                    </table>
-                    <table>
-                        <thead id="attractions"></thead>
-                        <tbody id="attResults"></tbody>
-                    </table>
+    <header>
+        <h1>City-Break Finder</h1>
+    </header>
+        <main class="container">
+            <section>
+                <div class="select">
+                    <h2>Choose Your Destination</h2>
+                    <input type="text" name="autocomplete" id="autocomplete" placeholder="Enter a City"/>
+                    <button type="reset" name="reset" id="reset" onclick="resetMap()">Clear</button>
                 </div>
-            </div>
-            
-            <div style="display: none">
-              <div id="info-content">
-                <table>
-                  <tr id="iw-url-row" class="iw_table_row">
-                    <td id="iw-icon" class="iw_table_icon"></td>
-                    <td id="iw-url"></td>
-                  </tr>
-                  <tr id="iw-address-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Address:</td>
-                    <td id="iw-address"></td>
-                  </tr>
-                  <tr id="iw-phone-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Telephone:</td>
-                    <td id="iw-phone"></td>
-                  </tr>
-                  <tr id="iw-rating-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Rating:</td>
-                    <td id="iw-rating"></td>
-                  </tr>
-                  <tr id="iw-website-row" class="iw_table_row">
-                    <td class="iw_attribute_name">Website:</td>
-                    <td id="iw-website"></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
+            </section>
+            <section>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+                
+                <div class="listings">
+                    <h2 id="listingsTitle">Here's the results for your city.<br>
+                        Click on a result to display more information
+                    </h2>
+                    <div class="resultsTables">
+                        <div class="itemTable">
+                            <table>
+                                <tbody id="results"></tbody>
+                            </table>
+                        </div>
+                        <div class="itemTable">
+                            <table>
+                                <tbody id="barResults"></tbody>
+                            </table>
+                        </div>
+                        <div class="itemTable">
+                            <table>
+                                <tbody id="attResults"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: none">
+                  <div id="info-content">
+                    <table>
+                      <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                      </tr>
+                      <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                      </tr>
+                      <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                      </tr>
+                      <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                      </tr>
+                      <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+            </section>
+            <section>
+                <div id="suggest">
+                    <h2>Need Some Inspiration? Why not explore one of these cities?</h2>
+                    <div class="presets">
+                        <div class="choices" id="loc1">London
+                            <img src="assets/images/London.jpg"></img>
+                        </div>
+                        <div class="choices" id="loc2">Dublin
+                            <img src="assets/images/Dublin.jpg"></img>
+                        </div>
+                        <div class="choices" id="loc3">Berlin
+                            <img src="assets/images/Berlin.jpg"></img>
+                        </div>
+                        <div class="choices" id="loc4">Barcelona
+                            <img src="assets/images/Barcelona.jpg"></img>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
-        <section>
-            <div id="suggest">
-                <h2>Need Some Inspiration? Why not explore one of these cities?</h2>
-                <div class="presets">
-                    <div class="choices" id="loc1">London
-                        <img src="#"></img>
-                    </div>
-                    <div class="choices" id="loc2">Dublin
-                        <img src="#"></img>
-                    </div>
-                    <div class="choices" id="loc3">Berlin
-                        <img src="#"></img>
-                    </div>
-                    <div class="choices" id="loc4">Barcelona
-                        <img src="#"></img>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <div>Website by Geoff Doig. Powered by Google Maps.</div>
-        </footer>
-    </div>
+    <footer>
+        <div>Website by Geoff Doig. Powered by Google Maps.</div>
+    </footer>
     
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCooVz6oCjN5u_3cMHByQ_zhFMIEgDS05A&callback=initMap&libraries=places"></script>

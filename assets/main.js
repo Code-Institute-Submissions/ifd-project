@@ -28,7 +28,7 @@
             autocomplete.addListener('place_changed', onPlaceChanged);
         }
         
-        $("document").ready(function() { 
+        $(document).ready(function() { 
             $("#loc1").click(function() {
                 $("#autocomplete").val('London, UK');
                 this.LatLng = new google.maps.LatLng({lat: 51.507351, lng: -0.127758});
@@ -95,6 +95,7 @@
                 clearResults();
                 clearMarkers();
                 $("#listingsTitle").show();
+                $(".itemTable").show();
                 addHeading();
                 for (var i = 0; i < results.length; i++) {
                   var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -136,11 +137,21 @@
         }
         
         function addHeading() {
-            var hotel = document.getElementById('hotels');
+            var hotel = document.getElementById('results');
+            var markerIcon = MARKER_PATH + red;
+            var tr = document.createElement('tr');
+            var iconTh = document.createElement('th');
             var th = document.createElement('th');
+            var icon = document.createElement('img');
+            icon.src = markerIcon;
+            icon.setAttribute('class', 'placeIcon');
+            icon.setAttribute('className', 'placeIcon');
             var text = document.createTextNode("Accommodation");
+            iconTh.appendChild(icon);
             th.appendChild(text);
-            hotel.appendChild(th);
+            tr.appendChild(iconTh);
+            tr.appendChild(th);
+            hotel.appendChild(tr);
         }
         
         function addResult(result, i) {
@@ -148,7 +159,7 @@
             var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
             var markerIcon = MARKER_PATH + markerLetter + red;
             var tr = document.createElement('tr');
-            tr.style.backgroundColor = (i % 2 === 0 ? '#ff7575' : '#ffffff');
+            tr.style.backgroundColor = (i % 2 === 0 ? '#ffdada' : '#f5ffaf');
             tr.onclick = function() {
               google.maps.event.trigger(markers[i], 'click');
             };
@@ -272,11 +283,21 @@
         }
         
         function addBarHeading() {
-            var bars = document.getElementById('bars');
+            var bars = document.getElementById('barResults');
+            var barMarkerIcon = MARKER_PATH + blue;
+            var tr = document.createElement('tr');
+            var iconTh = document.createElement('th');
             var th = document.createElement('th');
+            var icon = document.createElement('img');
+            icon.src = barMarkerIcon;
+            icon.setAttribute('class', 'placeIcon');
+            icon.setAttribute('className', 'placeIcon');
             var food = document.createTextNode('Bars and Restaurants');
+            iconTh.appendChild(icon);
             th.appendChild(food);
-            bars.appendChild(th);
+            tr.appendChild(iconTh);
+            tr.appendChild(th);
+            bars.appendChild(tr);
         }
         
         function addBarResult(barResult, i) {
@@ -284,7 +305,7 @@
             var barMarkerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
             var barMarkerIcon = MARKER_PATH + barMarkerLetter + blue;
             var tr = document.createElement('tr');
-            tr.style.backgroundColor = (i % 2 === 0 ? '#7575ff' : '#ffffff');
+            tr.style.backgroundColor = (i % 2 === 0 ? '#dadaff' : '#f5ffaf');
             tr.onclick = function() {
               google.maps.event.trigger(barMarkers[i], 'click');
             };
@@ -351,11 +372,21 @@
         }
       
         function addAttHeading() {
-            var atts = document.getElementById('attractions');
+            var atts = document.getElementById('attResults');
+            var attMarkerIcon = MARKER_PATH + green;
+            var tr = document.createElement('tr');
+            var iconTh = document.createElement('th');
             var th = document.createElement('th');
+            var icon = document.createElement('img');
+            icon.src = attMarkerIcon;
+            icon.setAttribute('class', 'placeIcon');
+            icon.setAttribute('className', 'placeIcon');
             var ttd = document.createTextNode('Nearby Attractions');
+            iconTh.appendChild(icon);
             th.appendChild(ttd);
-            atts.appendChild(th);
+            tr.appendChild(iconTh);
+            tr.appendChild(th);
+            atts.appendChild(tr);
         }
         
         function addAttResult(attResult, i) {
@@ -363,7 +394,7 @@
             var attMarkerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
             var attMarkerIcon = MARKER_PATH + attMarkerLetter + green;
             var tr = document.createElement('tr');
-            tr.style.backgroundColor = (i % 2 === 0 ? '#75ff75' : '#ffffff');
+            tr.style.backgroundColor = (i % 2 === 0 ? '#daffda' : '#f5ffaf');
             tr.onclick = function() {
               google.maps.event.trigger(attMarkers[i], 'click');
             };
@@ -390,7 +421,7 @@
             clearAttMarkers();
             $("#suggest").show();
             $("#listingsTitle").hide();
-            $("thead").empty();
+            $(".itemTable").hide();
             $("#autocomplete").val('');
             initMap();
         }
