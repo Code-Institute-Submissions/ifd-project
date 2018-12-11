@@ -39,7 +39,7 @@ h2 {
     font-size: 30px;
 }
 
-#autocomplete {
+#search {
     height: 20px;
     width: 150px;
     padding: 3px 3px;
@@ -85,6 +85,8 @@ h2 {
     width: 350px;
     overflow: auto;
     border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 20px;
 }
 
@@ -101,6 +103,7 @@ h2 {
 
 #results td:hover {
     background-color: #ff7575;
+    cursor: pointer;
 }
 
 #barResults th {
@@ -109,6 +112,7 @@ h2 {
 
 #barResults td:hover {
     background-color: #7575ff;
+    cursor: pointer;
 }
 
 #attResults th {
@@ -117,6 +121,7 @@ h2 {
 
 #attResults td:hover {
     background-color: #75ff75;
+    cursor: pointer;
 }
 
 .placeIcon {
@@ -124,6 +129,39 @@ h2 {
     width: 21px;
     margin: 4px;
 }
+
+.presets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+img {
+    height: 125px;
+    width: 125px;
+    margin-top: 10px;
+}
+
+footer {
+    color: white;
+    background-color: #170072;
+    height: 40px;
+    text-align: center;
+    padding-top: 35px;
+}
+
+/*-----From Google developer documentation-----*/
 
 .itemIcon {
     height: 24px;
@@ -145,34 +183,4 @@ h2 {
 
 .iw_table_icon {
     text-align: right;
-}
-
-.presets {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.choices {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-img {
-    height: 125px;
-    width: 125px;
-    margin-top: 10px;
-}
-
-footer {
-    color: white;
-    background-color: #170072;
-    height: 40px;
-    text-align: center;
-    padding-top: 35px;
 }
