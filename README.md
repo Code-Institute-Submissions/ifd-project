@@ -27,10 +27,10 @@ Wireframes for this website can be found [here](/ifd-wireframes.pdf)
    * Used to apply styles and colours to, and provide a responsive layout for the webpage.
 
 [Javascript](https://www.javascript.com/)
-    * Used to render Google Maps API and plot results from the search box.
+   * Used to render Google Maps API and plot results from the search box.
 
 [jQuery](https://jquery.com/)
-    * Javascript library used to target specific HTML elements with javascript functions.
+   * Javascript library used to target specific HTML elements with javascript functions.
 
 ### Testing
 
@@ -52,14 +52,17 @@ The clear button resets the page back to it's initial display, ready for a new s
 Four suggested destinations are provided on the page, which when clicked produce results for hotels,
 bars and restaurants and tourist attractions for that destination.
 
+The webpage was tested for full operation as above and once rendered in a browser window, the browser
+window was re-sized to prove the responsive, mobile first design of the webpage.
+
 ### Deployment
 
-
+Webpage deployed on github pages [here](https://geoffdoig.github.io)
 
 ### Credits
 
-*__Code__ The code used for rendering the maps, markers, auto-complete search box and information window
+* __Code__ The code used for rendering the maps, markers, auto-complete search box and information window
           was taken from Google developer documentation supplied with [Google Maps API](https://developers.google.com/maps/documentation/javascript/tutorial)
           
-*__Media__ The images used for the destination suggestions were chosen from Google search results 
+* __Media__ The images used for the destination suggestions were chosen from Google search results 
            for images of each specific location.
