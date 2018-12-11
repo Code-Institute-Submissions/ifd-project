@@ -57,7 +57,8 @@ window was re-sized to prove the responsive, mobile first design of the webpage.
 
 ### Deployment
 
-Webpage deployed on github pages [here](https://geoffdoig.github.io)
+Webpage deployed on github pages [here](https://geoffdoig.github.io/ifd-project/)
+https://geoffdoig.github.io/ifd-project/
 
 ### Credits
 
