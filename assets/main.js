@@ -1,20 +1,20 @@
+// Code from Google Maps Developers Documentation
 var autocomplete, map, places, infoWindow;
+var markers = [];
+var hostnameRegexp = new RegExp('^https?://.+?/');
+// Original code adapted from Google code to provide necessary functionality for the webpage 
 var MARKER_PATH = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=';
 var green = '|00ff00';
 var red = '|ff0000';
 var blue = '|0000ff';
-var markers = [];
 var barMarkers = [];
 var attMarkers = [];
-var hostnameRegexp = new RegExp('^https?://.+?/');
 
+// Code from Google Maps Developers Documentation
     function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
             zoom: 3,
-            center: {
-                lat: 48.0,
-                lng: -25.0
-            }
+            center: {lat: 48.0, lng: -25.0}
         });
         infoWindow = new google.maps.InfoWindow({
             content: document.getElementById('info-content')
@@ -27,7 +27,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         
         autocomplete.addListener('place_changed', onPlaceChanged);
     }
-    
+
+// Original code    
     $(document).ready(function() { 
         $("#loc1").click(function() {
             $("#search").val('London, UK');
@@ -70,21 +71,26 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
             $("#suggest").hide();
         });
     });
-        
+
+// Code from Google Maps Developers Documentation        
     function onPlaceChanged() {
         var place = autocomplete.getPlace();
         if (place.geometry) {
             map.panTo(place.geometry.location);
             map.setZoom(15);
             search();
+// Original code adapted from Google code to provide necessary functionality for the webpage
             barSearch();
             attSearch();
+// Original code
             $("#suggest").hide();
+// Code from Google Maps Developers Documentation
         } else {
             document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
     }
-      
+
+// Code from Google Maps Developers Documentation      
     function search() {
         var search = {
             bounds: map.getBounds(),
@@ -94,9 +100,11 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
             if (status === google.maps.places.PlacesServiceStatus.OK) {
                 clearResults();
                 clearMarkers();
+// Original code                
                 $("#listingsTitle").show();
                 $(".itemTable").show();
                 addHeading();
+// Code from Google Maps Developers Documentation
                 for (var i = 0; i < results.length; i++) {
                     var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
                     var markerIcon = MARKER_PATH + markerLetter + red;
@@ -135,7 +143,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
             markers[i].setMap(map);
         };
     }
-    
+
+// Original code adapted from Google code to provide necessary functionality for the webpage    
     function addHeading() {
         var hotel = document.getElementById('results');
         var markerIcon = MARKER_PATH + red;
@@ -153,18 +162,21 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         tr.appendChild(th);
         hotel.appendChild(tr);
     }
-    
+
+// Code from Google Maps Developers Documentation    
     function addResult(result, i) {
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
         var markerIcon = MARKER_PATH + markerLetter + red;
         var tr = document.createElement('tr');
+// Changed table colors
         tr.style.backgroundColor = (i % 2 === 0 ? '#ffdada' : '#f5ffaf');
         tr.onclick = function() {
             google.maps.event.trigger(markers[i], 'click');
         };
         var iconTd = document.createElement('td');
         var nameTd = document.createElement('td');
+// Added extra styling
         nameTd.style.width = "296px";
         var icon = document.createElement('img');
         icon.src = markerIcon;
@@ -177,7 +189,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         tr.appendChild(nameTd);
         results.appendChild(tr);
     }
-    
+
+// Code from Google Maps Developers Documentation
     function showInfoWindow() {
         var marker = this;
         places.getDetails({placeId: marker.placeResult.place_id},
@@ -232,6 +245,7 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         }
     }
     
+// Original code adapted from Google code to provide necessary functionality for the webpage    
     function barSearch() {
         var barSearch = {
             bounds: map.getBounds(),
@@ -322,7 +336,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         tr.appendChild(nameTd);
         barResults.appendChild(tr);
     }
-    
+
+// Original code adapted from Google code to provide necessary functionality for the webpage    
     function attSearch() {
         var attSearch = {
             bounds: map.getBounds(),
@@ -412,7 +427,8 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         tr.appendChild(nameTd);
         attResults.appendChild(tr);
     }
-    
+
+// Original code    
     function resetMap() {
         clearResults();
         clearMarkers();
@@ -426,10 +442,7 @@ var hostnameRegexp = new RegExp('^https?://.+?/');
         $("#search").val('');
         map = new google.maps.Map(document.getElementById("map"), {
             zoom: 3,
-            center: {
-                lat: 48.0,
-                lng: -25.0
-            }
+            center: {lat: 48.0, lng: -25.0}
         });
     }
     
